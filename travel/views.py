@@ -388,7 +388,7 @@ def checkout(request):
             'INDUSTRY_TYPE_ID': 'Retail',
             'WEBSITE': 'WEBSTAGING',#webstaging is used if we are in test mode
             'CHANNEL_ID': 'WEB',
-            'CALLBACK_URL':'http://127.0.0.1:8000/handlerequest/',
+            'CALLBACK_URL':'https://ghumoindia.herokuapp.com/handlerequest/',
         }
         MERCHANT_KEY='MaM!%BJgyIZRTEpq'
         param_dict['CHECKSUMHASH']=Checksum.generate_checksum(param_dict, MERCHANT_KEY)
