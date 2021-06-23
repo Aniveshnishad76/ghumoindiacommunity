@@ -1,6 +1,6 @@
 import random
 
-from Tools.scripts.make_ctype import method
+
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.core.paginator import Paginator
