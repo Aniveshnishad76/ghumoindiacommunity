@@ -1,0 +1,61 @@
+ {% extends 'user_pages/user_base.html' %}
+ {% load static %}
+ {% block content %}
+    <!-- BreadCrumb Starts -->
+    <section class="breadcrumb-main pb-2" style="background-image: url({% static 'bg/bg8.jpg' %});">
+        <div class="dot-overlay"></div>
+    </section>
+    <!-- BreadCrumb Ends --> 
+
+    <!-- Dashboard -->
+   <div class="tab-content">
+
+                    <div id="schedule1" class="tab-pane fade in active">
+
+
+                        <div class="flight-full">
+                            <div class="item mb-2">
+                                <div class="row d-flex align-items-center justify-content-between">
+                                    <div class="col-lg-3 col-md-3 col-sm-12">
+                                        <div class="item-inner-image text-center">
+                                           <a href="{% url 'destination_single_full' id=data.tour.id %}"> <img src="{{ data.tour.image1}}" alt="image"></a>
+                                        </div>
+                                        <div class="mt-3 float-left">
+
+                                     <span > Tour Name  :</span><h4 class=" pink">{{ data.tour.tour_name}}</h4>
+                                     <span> Tour Location  :</span><h4 class=" pink">{{ data.tour.tour_location}}</h4>
+                                      <span> Transation ID  :</span><h4 class=" pink">{{ data.txnid}}</h4>
+                                       <span> Booking ID  :</span><h4 class=" pink">{{ data.order_id}}</h4>
+                                       <span> Transation Date  :</span><h4 class=" pink">{{ data.txndate}}</h4>
+<span> Transation Status   :</span><h4 class=" pink">{{ data.status}}</h4>
+                                       <span> Amount  :</span><h4 class=" pink">{{ data.amount}}</h4>
+                                       <span> Booking Customer  :</span><h4 class=" pink">{{ data.username}}</h4>
+
+<span> User Email  :</span><h4 class=" pink">{{ data.email}}</h4>
+                                     <span> Mobile  :</span><h4 class=" pink">{{ data.number}}</h4>
+                                      <span> City  :</span><h4 class=" pink">{{ data.city}}</h4>
+                                       <span> State  :</span><h4 class=" pink">{{ data.state}}</h4>
+                                       <span> Country  :</span><h4 class=" pink">{{ data.country}}</h4>
+                                       <span> Booking Customer  :</span><h4 class=" pink">{{ data.username}}</h4>
+                                            <span> Tour Date  :</span><h4 class=" pink">{{ data.tour.last_date}}</h4>
+                                       <span> Tour Depature Time  :</span><h4 class=" pink">{{ data.tour.depature_time}}</h4>
+                                       <span> More Details  :</span><h4 class=" pink"><a href="{% url 'destination_single_full' id=data.tour.id %}">Here</a></h4>
+                                    </div>
+<div class="booking-border d-flex float-left">
+                                <a href="#" onclick="window.print()" class="nir-btn mr-4"><i class="fa fa-print"></i> Print</a>
+                                </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+      </div>
+
+     <br><br><!-- Dashboard / End -->
+{% endblock %}

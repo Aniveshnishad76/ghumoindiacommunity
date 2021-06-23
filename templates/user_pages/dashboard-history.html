@@ -1,0 +1,66 @@
+ {% extends 'user_pages/user_base.html' %}
+ {% load static %}
+ {% block content %}
+    <!-- BreadCrumb Starts -->
+    <section class="breadcrumb-main pb-2" style="background-image: url({% static 'bg/bg8.jpg' %});">
+        <div class="dot-overlay"></div>
+    </section>
+    <!-- BreadCrumb Ends --> 
+
+    <!-- Dashboard -->
+   <div class="tab-content">
+   {% if data %}
+                    <div id="schedule1" class="tab-pane fade in active">
+                        {% for data in data %}
+
+                        <div class="flight-full">
+                            <div class="item mb-2">
+                                <div class="row d-flex align-items-center justify-content-between">
+                                    <div class="col-lg-3 col-md-3 col-sm-12">
+                                        <div class="item-inner-image text-center">
+                                           <a href="{% url 'destination_single_full' id=data.tour.id%}"> <img src="{{ data.tour.image1}}" alt="image"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-12">
+                                        <div class="item-inner">
+                                        <div class="content">
+                                            <h4 class="mb-0">{{ data.txntime }}</h4>
+                                            <h3 class="mb-0 pink">{{ data.tour.tour_name}}</h3>
+                                            <p class="mb-0 text-uppercase">{{ data.txndate}}</p>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-12">
+                                        <div class="item-inner flight-time">
+                                        <p class="mb-0" style="text-transform: capitalize;">{{ data.username }}</p>
+                                        </div>
+                                    </div>
+                                   <div class="col-lg-2 col-md-2 col-sm-12">
+                                        <div class="item-inner">
+                                            <div class="content">
+                                                <h6 class="mb-0 text-capitalize" style="color:green;">{{ data.status }}</h6>
+                                                <h3 class="mb-0 pink">{{ data.number }}</h3>
+                                                <p class="mb-0 text-uppercase">{{ data.zip_code }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12">
+                                        <div class="item-inner flight-btn text-center p-0 bordernone mb-0">
+                                        <p class="navy">Rs {{data.amount}}/-</p>
+                                        <a href="{% url 'booking_detail' id=data.id %}" class="nir-btn-black">See Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+   {% endfor %}
+   {% else %}
+       <center><h5 style="text-transform: capitalize;color: red;" class="mt-5">Not Booking History Yet <span style="color: maroon">Plese Select a Tour To Visit</span> </h5></center>
+                </div>
+{% endif %}
+     <br><br><!-- Dashboard / End -->
+{% endblock %}

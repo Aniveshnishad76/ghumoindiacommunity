@@ -1,0 +1,107 @@
+{% extends 'user_pages/user_base.html' %}
+{% load static %}
+{% block content %}
+
+   <!-- BreadCrumb Starts -->
+    <section class="breadcrumb-main pb-0" style="background-image: url({% static 'bg/bg8.jpg'%});">
+        <div class="breadcrumb-outer pt-10">
+            <div class="container">
+                <div class="breadcrumb-content d-md-flex align-items-center pt-10">
+                    <h2 class="mb-0">Blog </h2>
+                    <nav aria-label="breadcrumb">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Blog </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="dot-overlay"></div>
+    </section>
+    <!-- BreadCrumb Ends --> 
+
+    <!-- blog starts -->
+    <section class="blog blog-fullwidth">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="listing-inner">
+                        <div class="list-results d-flex align-items-center justify-content-between">
+                            <div class="list-results-sort">
+
+                            </div>
+                            <div class="click-menu d-flex align-items-center justify-content-between">
+                               <div class="sortby d-flex align-items-center justify-content-between ml-2">
+
+                                </div>
+                            </div>
+                        </div>
+                        {% for y in data %}
+
+                                {% if forloop.counter|divisibleby:2 %}
+                        <div class="blog-full d-flex justify-content-around mb-4">
+                            <div class="row w-100">
+                                <div class="col-lg-5 col-md-4 col-xs-12 blog-height">
+                                   <div class="blog-image">
+                                            <a href="{{ y.blog_link }}" style="background-image: url({{ y.image_blog }})"></a>
+                                    </div> 
+                                </div>
+                                <div class="col-lg-7 col-md-8 col-xs-12">
+                                    <div class="blog-content">
+                                        <span class="h-date pink mb-1 font-weight-light d-block"> {{ y.date}}</span>
+                                        <h3 class="mb-2"><a href="#" class="" style="text-transform: capitalize">{{ y.Visited_place}}</a></h3>
+                                        <p class="date-cats mb-0 border-t pt-2 pb-2">
+                                            <a href="#" class="mr-2" style="text-transform: capitalize"><i class="fa fa-file"></i> {{ y.categories }}</a> <a href="#" class="" style="text-transform: capitalize"><i class="fa fa-user"></i> {{y.bloger_name}}</a>
+                                        </p> 
+                                        <p class="mb-2 border-t pt-2" style="text-transform: capitalize">{{ y.blog_title }}</p>
+                                        <a href="{{ y.blog_link }}" class="grey font-weight-light"> Read This <i class="fa fa-long-arrow-alt-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                             {% else %}
+
+                        <div class="blog-full d-flex justify-content-around mb-4">
+                            <div class="row flex-row-reverse w-100">
+                                <div class="col-lg-5 col-md-4 col-xs-12 blog-height">
+                                   <div class="blog-image">
+                                        <a href="{{ y.blog_link }}" style="background-image: url({{ y.image_blog }});"></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-8 col-xs-12">
+                                    <div class="blog-content">
+                                        <span class="h-date pink mb-1 font-weight-light d-block">  {{ y.date}}</span>
+                                        <h3 class="mb-2"><a href="#" class="">{{ y.Visited_place }}</a></h3>
+                                        <p class="date-cats mb-0 border-t pt-2 pb-2">
+                                            <a href="#" class="mr-2"><i class="fa fa-file"></i> {{ y.categories }}</a> <a href="#"><i class="fa fa-user"></i>
+                                            {{ y.bloger_name}}</a>
+                                        </p>
+                                        <p class="mb-2 border-t pt-2">{{ y.blog_title}}</p>
+                                        <a href="{{y.blog_link}}" class="grey font-weight-light">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>{% endif %}
+                                {% endfor %}
+
+
+                      <div class="pagination-main text-center">
+                            <ul class="pagination">
+                               {% if data.has_previous %}
+                                <li><a href="?page={{data.previous_page_number}}"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+                                {% endif %}
+                                <li class="active"><a href="#">{{data.number}}</a></li>
+
+                                {% if data.has_next %}
+                                <li><a href="?page={{data.next_page_number}}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- blog Ends -->  
+{% endblock %}

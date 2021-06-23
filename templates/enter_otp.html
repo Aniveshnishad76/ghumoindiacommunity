@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+{% load static %}
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'%}">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <title>Travel and Tours </title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'bootstrap.min.css'%}" rel="stylesheet" type="text/css">
+    <!--Custom CSS-->
+    <link href="{% static 'style.css'%}" rel="stylesheet" type="text/css">
+    <!--Plugin CSS-->
+    <link href="{% static 'plugin.css'%}" rel="stylesheet" type="text/css">
+    <!--Flaticons CSS-->
+    <link href="{% static 'flaticon.css'%}" rel="stylesheet" type="text/css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="{% static '4.7.0/css/font-awesome.min.css'%}">
+    <link rel="stylesheet" href="{% static '5.11.2/css/all.min.css'%}">
+
+    <link rel="stylesheet" href="{% static 'line-icons.css'%}" type="text/css">
+</head>
+
+
+{% block content %}
+
+<head>
+
+</head>
+<body>
+
+
+
+<header class="main_header_area headerstye-1">
+        <!-- Navigation Bar -->
+        <div class="header_menu" id="header_menu">
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-flex d-flex align-items-center justify-content-between w-100 pb-2 pt-2">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="home_pages">
+                                <img src="{% static 'logo.jpg'%}" alt="image" style="width:80px;height:80px;border-radius:50px;">
+                                <img src="{% static 'logo.jpg'%}" alt="image" style="width:80px;height:80px;border-radius:50px;">
+                            </a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="navbar-collapse1 d-flex align-items-center" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav" id="responsive-menu">
+                                <li class="dropdown submenu ">
+                                    <a href="home_pages"  role="button" aria-haspopup="true" >Home </a>
+
+                                </li>
+
+                                <li><a href="About_pages">About Us</a></li>
+
+                                <li class="submenu dropdown">
+                                    <a href="destination_pages"   role="button" aria-haspopup="true" >Destination </a>
+                                    </li>
+
+                                <li class="submenu dropdown">
+                                    <a href="blog_pages"  role="button" aria-haspopup="true" >Blogs </a>
+
+                                </li>
+
+                                <li><a href="contact_pages">Contact Us</a></li>
+                                <li class="submenu dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <i class="icon-arrow-down" aria-hidden="true"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="Gallery_pages">Gallery</a></li>
+                                        <li><a href="faq_pages">Faq</a></li>
+                                        <li><a href="testimonial_pages">Testimonials</a></li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div><!-- /.navbar-collapse -->
+
+                        <div class="register-login">
+                            <a href="Login_pages" class="mr-2" ><i class="icon-user mr-1"></i> Register</a>
+                            <a href="Login_pages" ><i class="icon-login mr-1"></i> Login</a>
+                        </div>
+
+                        <div id="slicknav-mobile"></div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+        <!-- Navigation Bar Ends -->
+    </header>
+
+<!-- BreadCrumb Starts -->
+    <section class="breadcrumb-main pb-0" style="background-image: url({% static 'bg/bg8.jpg'%});">
+        <div class="breadcrumb-outer pt-10">
+            <div class="container">
+                <div class="breadcrumb-content d-md-flex align-items-center pt-10">
+                    <h2 class="mb-0">Login</h2>
+                    <nav aria-label="breadcrumb">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="home_pages">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">My Login</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="dot-overlay"></div>
+    </section>
+    <!-- BreadCrumb Ends -->
+{% include 'user_pages/messages.html' %}
+{% if msg is not None %}
+    <script>
+    window.alert("{{ msg }}");
+    </script>
+    {% endif %}
+    <!-- login Starts -->
+   <section class="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-xs-12">
+                    <div class="login-content border p-4">
+                        <h4 class="">Hello! {{ email }} Please Enter Your OTP</h4>
+                        <form action="{% url 'Check_otp' %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label class="form-group">Email Address</label>
+                                <input type="email" name="email" value="{{ email }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-group">Enter otp</label>
+                                <input type="text" name="otp" required>
+                            </div>
+                            <div class="form-group form-checkbox text-center mb-1">
+
+                            </div>
+
+
+                        <div class="form-btn text-center">
+                            <button type="submit" class="nir-btn mb-2">SUBMIT</button>
+                            <p >Need an Account? Create your GhumoIndiaCommunity account</p>
+                        </div></form>
+                    </div>
+                </div>
+                            </div>
+        </div>
+    </section>
+    <!-- Login Ends -->
+
+
+{% endblock %}
+<script>
+   setTimeout(function (){
+       if ($('#msg').length>0){
+           $('#msg').remove();
+       }
+   }, 2000)
+</script>
+</body>
+</html>
+
+    <!-- BreadCrumb Starts -->

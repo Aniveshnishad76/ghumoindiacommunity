@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+{% load static %}
+
+<!-- Mirrored from htmldesigntemplates.com/html/yatriiworld/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Mar 2021 09:31:11 GMT -->
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <title>Travel and Tours </title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'bootstrap.min.css'%}" rel="stylesheet" type="text/css">
+    <!--Custom CSS-->
+    <link href="{% static 'style.css'%}" rel="stylesheet" type="text/css">
+    <!--Plugin CSS-->
+    <link href="{% static 'plugin.css'%}" rel="stylesheet" type="text/css">
+    <!--Flaticons CSS-->
+    <link href="{% static 'flaticon.css'%}" rel="stylesheet" type="text/css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="{% static '4.7.0/css/font-awesome.min.css'%}">
+    <link rel="stylesheet" href="{% static '5.11.2/css/all.min.css'%}">
+
+    <link rel="stylesheet" href="{% static 'line-icons.css'%}" type="text/css">
+</head>
+
+<body>
+{% load static %}
+{% block content %}
+
+    <!-- BreadCrumb Starts -->  
+    <section class="breadcrumb-main pb-0" style="background-image: url({% static 'bg/bg8.jpg' %}    );">
+        <div class="breadcrumb-outer pt-10">
+            <div class="container">
+                <div class="breadcrumb-content d-md-flex align-items-center pt-10">
+                    <h2 class="mb-0">Confirmation</h2>
+                    <nav aria-label="breadcrumb">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Confirmation</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="dot-overlay"></div>
+    </section>
+    <!-- BreadCrumb Ends -->  
+
+{% ifequal response.RESPCODE '01' %}
+    <!-- blog starts -->
+
+    <section class="blog trending destination-b pb-6">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-xs-12 mb-4">
+                    <div class="payment-book">
+                        <div class="booking-box">
+                            <div class="booking-box-title d-md-flex align-items-center bg-pink p-4 mb-4">
+                                <i class="fa fa-check"></i>
+                                <div class="title-content ml-3">
+                                    <h3 class="mb-0 white">Thank You. Your booking order is confirmed now.</h3>
+                                    <p class="mb-0 white">A confirmation email has been sent to your provided email address.</p>
+                                </div>
+                            </div>
+                            <div class="travellers-info mb-4">
+
+                                <h4>Booking Information</h4>
+                                <table>
+
+                                    <tr>
+                                        <td>Transation Number</td>
+                                        <td>{{response.TXNID}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Transation Number</td>
+                                        <td>{{response.ORDERID}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date</td>
+                                        <td>{{response.TXNDATE}}</td>
+                                    </tr>
+                                        <tr>
+                                        <td>Bank ID</td>
+                                        <td>{{response.BANKTXNID}}</td>
+                                    </tr>
+                                        <tr>
+                                        <td>Amount</td>
+                                        <td>{{response.TXNAMOUNT}}</td>
+                                    </tr>
+                                        <tr>
+                                        <td>Status</td>
+                                        <td>{{response.STATUS}}</td>
+                                    </tr>
+
+
+                                </table>{% else %}
+<h1>TRANSECTION STATUS : FAILED</h1>
+{% endifequal %}
+                            </div>
+                            <div class="booking-border mb-4 bg-lgrey p-4">
+                                <h4 class="border-b pb-2 mb-2">Payment</h4>
+                                <p>This is the third time I've used Travelo Website and telling you the truth their services are always reliable and it ony takes few minutes to plan and finalize.</p>
+                                <a href="#">Payment is made by Pytam</a>
+                            </div>
+                            <div class="booking-border mb-4 bg-lgrey p-4">
+                                <h4 class="border-b pb-2 mb-2">View Booking Details</h4>
+                                <p>This is the third time I've used Travelo Website and telling you the truth their services are always reliable and it ony takes few minutes to plan and finalize.</p>
+                                <a href="#">https://ghumoindia.herokuaap.com/</a>
+                            </div>
+                            <div class="booking-border d-flex">
+                                <a href="#" onclick="window.print()" class="nir-btn mr-4"><i class="fa fa-print"></i> Print</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-xs-12 mb-4">
+                    <div class="sidebar-sticky">
+                        <div class="list-sidebar">
+                            <div class="sidebar-item">
+                                <h4>Need Booking Help?</h4>
+                                <div class="sidebar-module-inner">
+                                    <p class="mb-2">Paid was hill sir high 24/7. For him precaution any advantages dissimilar.</p>
+                                    <ul class="help-list">
+                                        <li class="border-b pb-1 mb-1"><span class="font-weight-bold">Hotline</span>: 9589957396</li>
+                                        <li class="border-b pb-1 mb-1"><span class="font-weight-bold">Email</span>: Anivesh.nishad76@gmail.com</li>
+                                        <li><span class="font-weight-bold">Social Media</span>: Anivesh Nishad (Facebook), Blackpanther__r (Instagram) </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h4>Why booking with us?</h4>
+                                <div class="sidebar-module-inner">
+                                    <ul class="featured-list-sm">
+                                        <li class="border-b pb-2 mb-2">
+                                            <h6 class="mb-0">No Booking Charges</h6>
+                                            We don't charge you an extra fee for booking a hotel room with us
+                                        </li>
+                                        <li class="border-b pb-2 mb-2">
+                                            <h6 class="mb-0">No Cancellation Sees</h6>
+                                            We don't charge you a cancellation or modification fee in case plans change
+                                        </li>
+                                        <li class="border-b pb-2 mb-2">
+                                            <h6 class="mb-0">Instant Confirmation</h6>
+                                            Instant booking confirmation whether booking online or via the telephone
+                                        </li>
+                                        <li>
+                                            <h6 class="mb-0">Flexible Booking</h6>
+                                            You can book up to a whole year in advance or right up until the moment of your stay
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- blog Ends -->  
+{% endblock %}
+
+<!-- footer starts -->
+    <footer class="pt-10 bubbles footermain">
+        <div class="footer-upper pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-4">
+                        <div class="footer-about bg-white p-4">
+                            <img src="{% static 'logo.jpg'%}" alt="" style="width:200px;height:80px;">
+                            <p class="mt-3">
+                              Every heart, soul wandering for someone or somewhere be a traveler by heart.
+                            </p>
+                            <ul>
+                                <li><strong>PO Box:</strong> 919755260693</li>
+                                <li><strong>Location:</strong> Indore , Sarafa Bazar</li>
+                                <li><strong>Email:</strong> info@communityghumoindia.com</li>
+                                <li><strong>Website:</strong> www.ghumoindiacommunity.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-12 col-xs-12 mb-4">
+                        <div class="footer-links">
+                            <h4 class="white">Company</h4>
+                            <ul>
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="#">Delivery Information</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms &amp; Conditions</a></li>
+                                <li><a href="#">Customer Service</a></li>
+                                <li><a href="#">Return Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-12 col-xs-12 mb-4">
+                        <div class="footer-links">
+                            <h4 class="white">Services</h4>
+                            <ul>
+                                <li><a href="#">Payment</a></li>
+                                <li><a href="#">Feedback</a></li>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Our Service</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Site map</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-4">
+                        <div class="footer-links">
+                            <h4 class="white">Newsletter</h4>
+                            <p>Want to be notified when we launch a new tour or an vacation place. Just sign up and we'll send you a notification by email.</p>
+                            <div class="newsletter-form">
+                                <form>
+                                    <input type="email" placeholder="Enter your email">
+                                    <input type="submit" class="nir-btn mt-2 w-100" value="Subscribe">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-payment">
+            <div class="container">
+                <div class="footer-pay d-md-flex align-items-center justify-content-between pt-2 pb-2">
+                    <div class="footer-payment-nav">
+                        <ul class="d-md-flex align-items-center">
+                            <li class="mr-2">We Support:</li>
+                            <li class="mr-2"><i class="fab fa-cc-mastercard"></i></li>
+                            <li class="mr-2"><i class="fab fa-cc-paypal"></i></li>
+                            <li class="mr-2"><i class="fab fa-cc-stripe"></i></li>
+                            <li class="mr-2"><i class="fab fa-cc-visa"></i></li>
+                            <li class="mr-2"><i class="fab fa-cc-discover"></i></li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright pt-2 pb-2">
+            <div class="container">
+                <div class="copyright-inner d-md-flex align-items-center justify-content-between">
+                    <div class="copyright-text">
+                        <p class="m-0 white">2020 GhumoIndiaCommunity. All rights reserved.</p>
+                    </div>
+                    <div class="social-links">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer ends -->
+
+    <!-- Back to top start -->
+    <div id="back-to-top">
+        <a href="#"></a>
+    </div>
+    <!-- Back to top ends -->
+
+    <!-- Register Modal -->
+
+    <!-- header side menu -->
+
+    <!-- *Scripts* -->
+    <script src="{% static 'jquery-3.5.1.min.js'%}"></script>
+    <script src="{% static 'bootstrap.min.js'%}"></script>
+    <script src="{% static 'particles.js'%}"></script>
+    <script src="{% static 'particlerun.js'%}"></script>
+    <script src="{% static 'plugin.js'%}"></script>
+    <script src="{% static 'main.js'%}"></script>
+    <script src="{% static 'custom-swiper.js'%}"></script>
+    <script src="{% static 'custom-nav.js'%}"></script>
+    <script src="{% static 'custom-date.js'%}"></script>
+
+</body>

@@ -1,0 +1,69 @@
+{% extends 'user_pages/user_base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- BreadCrumb Starts -->
+    <section class="breadcrumb-main pb-0" style="background-image: url({% static 'bg/bg8.jpg'%});">
+        <div class="breadcrumb-outer pt-10">
+            <div class="container">
+                <div class="breadcrumb-content d-md-flex align-items-center pt-10">
+                    <h2 class="mb-0">Gallery Masonry</h2>
+                    <nav aria-label="breadcrumb">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Gallery Masonry</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="dot-overlay"></div>
+    </section>
+    <!-- BreadCrumb Ends -->
+
+    <!-- Gallery starts -->
+    <div class="gallery pb-6 pt-10">
+        <div class="container">
+            <div class="row blog-main">
+                {% for y in data %}
+
+                                {% if forloop.counter|divisibleby:2 %}
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mansonry-item">
+                    <div class="gallery-item mb-4">
+                        <div class="gallery-image">
+                            <img src="{{ y.image }}" alt="image">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="gallery-content">
+                            <ul>
+                                <li><a href="{{y.image}}" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
+                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                        {% else %}
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mansonry-item">
+                    <div class="gallery-item mb-4">
+                        <div class="gallery-image">
+                            <img src="{{ y.image }}" alt="image">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="gallery-content">
+                            <ul>
+                                <li><a href="{{ y.image }}" data-lightbox="gallery" data-title="Title"><i class="fa fa-eye"></i></a></li>
+                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                                    {% endif %}
+                                {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery Ends -->
+{% endblock %}

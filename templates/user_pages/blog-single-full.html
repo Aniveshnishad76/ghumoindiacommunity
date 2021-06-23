@@ -1,0 +1,227 @@
+{% extends 'user_pages/user_base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <!-- BreadCrumb Starts -->  
+    <section class="breadcrumb-main pb-0" style="background-image: url({% static 'bg/bg8.jpg'%});">
+        <div class="breadcrumb-outer pt-10">
+            <div class="container">
+                <div class="breadcrumb-content d-md-flex align-items-center pt-10">
+                    <h2 class="mb-0">Blog </h2>
+                    <nav aria-label="breadcrumb">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Blog </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="dot-overlay"></div>
+    </section>
+    <!-- BreadCrumb Ends -->  
+
+
+    <!-- blog starts -->
+    <section class="blog blog-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="blog-single">
+                        <div class="blog-imagelist mb-3">
+                            <img src="{% static 'bg/bg3.jpg'%}" alt="image">
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2">
+                                <div class="date text-center bg-pink p-2">
+                                    <h1 class="day mb-0 white">11</h1>
+                                    <div class="month white">May</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-md-10">
+                                <div class="blog-content mb-4 pt-0">
+                                    <h3 class="blog-title"><a href="#" class="yellow">Counts Is the Greatest Change the Platform Has Ever Made</a></h3>
+                                    <div class="para-content mb-2">
+                                       <span class="mr-2"><a href="#" class="tag pink"><i class="fa fa-tag mr-1"></i> Popular </a></span>
+                                       <span class="mr-2"><a href="#" class="pink"><i class="fa fa-user mr-1"></i> Adam Joel</a></span>
+                                       <span><a href="#" class="pink"><i class="fa fa-comment"></i> 20</a></span> 
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipis Vi ales elit vitae lo bortis faucibus. Lorem ipsum dolor sit amet, conse dolor sit amet, consectetu ctetur adipis Viales. Lorem ipsum dolor sit amet, cons sit amet, consectetur adi ectetur adipis Vi.</p>
+                                    <p class="mb-0">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
+                                </div>
+
+                                <!-- blog blockquote -->
+                                <div class="blog-quote mb-4">
+                                    <p class="white">“To take a trivial example, which ever undertakes laborious physical work exercise, except obtain some advantage blinded” </p>
+                                    <span class="white">By Michael Delwell</span>
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+
+                                <div class="blog-imagelist mb-4">
+                                    <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <img src="{% static 'blog/blog1.jpg'%}" alt="image">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <img src="{% static 'blog/blog2.jpg'%}" alt="image">
+                                    </div>
+                                    </div>
+                                </div>    
+
+                                <p class="mb-4">as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
+
+                                <!-- blog share -->
+                                <div class="blog-share d-flex justify-content-between align-items-center mb-4 bg-lgrey border">
+                                    <div class="blog-share-tag">
+                                        <ul class="inline">
+                                            <li><strong>Posted In:</strong></li>    
+                                            <li><a href="#">Fashion,</a></li>
+                                            <li><a href="#">Beauty,</a></li>
+                                            <li><a href="#">Vacation,</a></li>
+                                            <li><a href="#">Travel,</a></li>
+                                            <li><a href="#">News</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="header-social">
+                                        <ul>
+                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- author detail -->
+                        <div class="blog-author mb-4 bg-grey border">
+                            <div class="blog-author-item">
+                                <div class="row d-flex justify-content-between align-items-center">
+                                    <div class="col-md-3 col-sm-3 col-xs-12">
+                                        <div class="blog-thumb text-center">
+                                            <img src="{% static 'reviewer/1.jpg'%}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        <h3 class="title pink"><a href="#">About Author <span>Graphic Designer</span></a></h3>
+                                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sceler neque in euismod. Nam vitae urnasodales neque in faucibus.</p>
+                                    </div>
+                                    
+                                </div>        
+                            </div>
+                        </div>
+
+                        <!-- blog next prev -->
+                        <div class="blog-next mb-4">
+                            <a href="#" class="float-left">
+                                <div class="prev pl-4">
+                                    <i class="fa fa-arrow-left white"></i> 
+                                    <p  class="m-0 white">Previous Post</p>
+                                    <p class="m-0 white">The bedding was hardly able</p>
+                                </div>
+                            </a>
+                            <a href="#" class="float-right bg-grey">
+                                <div class="next pr-4 text-right">
+                                    <i class="fa fa-arrow-right"></i>
+                                    <p class="m-0">Previous Post</p>
+                                    <p class="m-0">The bedding was hardly able</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- blog comment list -->
+                        <div class="single-comments single-box mb-4">
+                            <h4 class="mb-4">Showing 16 verified guest comments</h4>
+                            <div class="comment-box">
+                                <div class="comment-image mt-2">
+                                    <img src="{% static 'reviewer/1.jpg'%}" alt="image">
+                                </div>
+                                <div class="comment-content">
+                                    <h4 class="mb-1 Soldman Kell">Soldman Kell</h4>
+                                    <p class="comment-date">April 25, 2019 at 10:46 am</p>
+                                    <div class="comment-rate">
+                                        <div class="rating mar-right-15">
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                        </div>
+                                        <span class="comment-title">"The worst hotel ever"</span>
+                                    </div>    
+                                    
+                                    <p class="comment">Take in the iconic skyline and visit the neighbourhood hangouts that you've only ever seen on TV. Take in the iconic skyline and visit the neighbourhood.</p>
+                                    <div class="comment-like">
+                                        <div class="like-title float-left">
+                                            <a href="#" class="nir-btn mr-2">Reply</a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-image mt-2">
+                                    <img src="{% static 'reviewer/2.jpg'%}" alt="image">
+                                </div>
+                                <div class="comment-content">
+                                    <h4 class="mb-1">Burson Lesson</h4>
+                                    <p class="comment-date">April 25, 2019 at 10:46 am</p>
+                                    <div class="comment-rate">
+                                        <div class="rating mar-right-15">
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                        </div>
+                                        <span class="comment-title">"Was too noisy and not suitable for business meetings"</span>
+                                    </div> 
+                                    
+                                    <p class="comment">Take in the iconic skyline and visit the neighbourhood hangouts that you've only ever seen on TV. Take in the iconic skyline and visit the neighbourhood.</p>
+                                    <div class="comment-like">
+                                        <div class="like-title float-left">
+                                            <a href="#" class="nir-btn">Reply</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- blog review -->
+                        <div class="single-add-review">
+                            <h4 class="">Write a Review</h4>
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <textarea>Comment</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-btn">
+                                            <a href="#" class="nir-btn">Submit Review</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- blog Ends -->  
+
+    {% endblock %}
