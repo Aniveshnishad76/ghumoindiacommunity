@@ -175,7 +175,7 @@ def Check_otp(request):
             messages.success(request,'You Are Registered Succrssfully, Please Login!')
             return render(request, 'login.html', {"email": email})
         else:
-            messages.ERROR(request, "Invalid OTP")
+            messages.error(request, 'Invalid OTP')
             return render(request, 'enter_otp.html')
         messages.ERROR(request, "Invalid OTP")
         return render(request, 'enter_otp.html')
