@@ -2,12 +2,13 @@ import random
 
 
 from django.contrib import messages
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage
 from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from django.template.loader import get_template
 from django.views.decorators.csrf import csrf_exempt
 
 from paytm import Checksum
@@ -142,13 +143,19 @@ def Data_register(request):
             request.session['username'] = username
             request.session['password'] = password
             request.session['number'] = number
-            send_mail(
+            ctx = {
+                'otp' :sent_otp
+            }
+            message = get_template('user_pages/email_tamplate1.html').render(ctx)
+            msg = EmailMessage(
                 'GhumoIndiaCommunity',
-                'You are in GhumoIndiaCommunity and your one time password is:' + sent_otp,
-                'GhumoIndiaCOmmunity',
+                message,
+                'Ghumo_India_Community',
                 [email],
 
             )
+            msg.content_subtype = "html"
+            msg.send()
             y.save()
 
             messages.success(request,"Otp sent Successfully")
@@ -298,13 +305,19 @@ def Check_password(request):
             sent_otp =str(otp)
             y = Otp(email=email,otp=sent_otp)
             request.session['email'] = email
-            send_mail(
+            ctx = {
+                'otp': sent_otp
+            }
+            message = get_template('user_pages/email_tamplate1.html').render(ctx)
+            msg = EmailMessage(
                 'GhumoIndiaCommunity',
-                'You are in GhumoIndiaCommunity and your reset password otp is:' + sent_otp,
-                'GhumoIndiaCommunity',
+                message,
+                'Ghumo_India_Community',
                 [email],
 
             )
+            msg.content_subtype = "html"
+            msg.send()
             y.save()
 
             messages.success(request, "Please Enter OTP sent to Your Email ")
@@ -419,13 +432,22 @@ def handlerequest(request):
             username=data.username
             txn_id=data.txnid
             tour_name=data.tour.tour_name
-            send_mail(
+            ctx = {
+                'username': username,
+                'txn_id': txn_id,
+                'tour_name': tour_name,
+                'order_id':order_id
+            }
+            message = get_template('user_pages/email_tamplate2.html').render(ctx)
+            msg = EmailMessage(
                 'GhumoIndiaCommunity',
-                'Hi '+ username + ' Your GhumoindiaCommunity tour ('+ tour_name + ') booking is now confirmed , Your Tour Tranasation ID is '+ txn_id  + ' and your order ID is ' + order_id +'.' + 'Enjoy your tour , THANKS FOR BOOKING.',
-                'GhumoIndiaCommunity',
+                message,
+                'Ghumo_India_Community',
                 [email],
 
             )
+            msg.content_subtype = "html"
+            msg.send()
             data.save()
 
 
@@ -443,13 +465,21 @@ def handlerequest(request):
             email = data.email
             username = data.username
             tour_name = data.tour.tour_name
-            send_mail(
+            ctx = {
+                'username': username,
+                'tour_name': tour_name
+
+            }
+            message = get_template('user_pages/email_tamplate3.html').render(ctx)
+            msg = EmailMessage(
                 'GhumoIndiaCommunity',
-                'Hi ' + username + ' Your GhumoindiaCommunity tour (' + tour_name + ') booking is failed ,  ' +  'Please Book your tour , Thanks for your Intrest in us.',
-                'GhumoIndiaCommunity',
+                message,
+                'Ghumo_India_Community',
                 [email],
 
             )
+            msg.content_subtype = "html"
+            msg.send()
             data.save()
             return render(request, "user_pages/confirmation-faild.html", {'response': response_dict})
 
